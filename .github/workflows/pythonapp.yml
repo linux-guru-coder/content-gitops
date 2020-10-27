@@ -23,6 +23,6 @@ jobs:
     - name: Build & Push Image
       run: |
         cd ./python
-        echo "${{ DOCKERPW }}" | docker login -u "oneterralive" --password-stdin
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "oneterralive" --password-stdin
         docker image build -t oneterralive/gitops:hellov1.0 .
         docker push oneterralive/gitops:hellov1.0
